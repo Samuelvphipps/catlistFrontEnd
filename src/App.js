@@ -1,7 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 function App() {
+
+    let output;
+
+    const getJoke = async () => {
+        const response = await axios.get('/api/dadjokes');
+        console.log(response);
+    }
+
+    getJoke();
   return (
     <div className="App">
       <header className="App-header">
